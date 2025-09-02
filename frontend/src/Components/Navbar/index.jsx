@@ -2,7 +2,7 @@ import React from "react";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { motion } from "framer-motion";
 
-export default function Navbar() {
+export default function Navbar({sideBar,setSideBar}) {
   return (
     <nav className="absolute top-0 left-0 w-full py-6 text-white z-40">
       <div className="container">
@@ -22,6 +22,7 @@ export default function Navbar() {
             Coffee.
           </motion.h1>
           <motion.div
+          onClick={()=>setSideBar(!sideBar)}
             initial={{ opacity: 0, y: -100 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{

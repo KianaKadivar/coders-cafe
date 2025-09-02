@@ -1,12 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import { motion } from "framer-motion";
 import BgImage from "./../../assets/bg-slate.png";
 import blackCoffee from "../../assets/black.png";
 import Navbar from "../Navbar";
+import { FaFacebook, FaTwitter, FaInstagram } from "react-icons/fa";
 
 const bgImage = {
   width: "100vw",
-  height: "105vh",
+  height: "100vh",
   backgroundImage: `url(${BgImage})`,
   backgroundRepeat: "no-repeat",
   backgroundPosition: "center",
@@ -14,11 +15,13 @@ const bgImage = {
 };
 
 export default function Hero() {
+  const [sideBar, setSideBar] = useState(false);
   return (
     <main style={bgImage}>
-      <section className="h-[100%] w-full">
+      <section className="relative h-[100%] w-full">
         <div className="container">
-          <Navbar />
+
+          <Navbar sideBar={sideBar} setSideBar={setSideBar} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[100%] lg:px-0 xl:px-6">
             <div className="text-light-orange mt-[100px] md:mt-0 p-4 space-y-28">
               <motion.h1
@@ -90,7 +93,7 @@ export default function Hero() {
                   type: "spring",
                   stiffness: 100,
                   damping: 10,
-                  delay: .8,
+                  delay: 0.8,
                 }}
                 className="absolute -top-15 left-[225px] z-[1]"
               >
@@ -127,6 +130,25 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
+        {sideBar && (
+          <div className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primary-dark/80 backdrop-blur-sm z-10">
+            <div className="w-full h-full flex justify-center items-center">
+              <div className="flex flex-col justify-center items-center gap-6 text-white">
+                <div className="w-[1px] h-[70px] bg-white"></div>
+                <div className="inline-block p-2 cursor-pointer rounded-full border border-white">
+                  <FaFacebook className="text-xl" />
+                </div>
+                <div className="inline-block p-2 cursor-pointer rounded-full border border-white">
+                  <FaTwitter className="text-xl" />
+                </div>
+                <div className="inline-block p-2 cursor-pointer rounded-full border border-white">
+                  <FaInstagram className="text-xl" />
+                </div>
+                <div className="w-[1px] h-[70px] bg-white"></div>
+              </div>
+            </div>
+          </div>
+        )}
       </section>
     </main>
   );
