@@ -2,6 +2,7 @@ import React from "react";
 import { motion } from "framer-motion";
 import BgImage from "./../../assets/bg-slate.png";
 import blackCoffee from "../../assets/black.png";
+import Navbar from "../Navbar";
 
 const bgImage = {
   width: "100vw",
@@ -17,7 +18,7 @@ export default function Hero() {
     <main style={bgImage}>
       <section className="h-[100%] w-full">
         <div className="container">
-          {/* <Navbar /> */}
+          <Navbar />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[100%] lg:px-0 xl:px-6">
             <div className="text-light-orange mt-[100px] md:mt-0 p-4 space-y-28">
               <motion.h1
