@@ -20,7 +20,6 @@ export default function Hero() {
     <main style={bgImage}>
       <section className="relative h-[100%] w-full">
         <div className="container">
-
           <Navbar sideBar={sideBar} setSideBar={setSideBar} />
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 place-items-center min-h-[100%] lg:px-0 xl:px-6">
             <div className="text-light-orange mt-[100px] md:mt-0 p-4 space-y-28">
@@ -130,8 +129,20 @@ export default function Hero() {
             </motion.div>
           </div>
         </div>
+        {/* side bar */}
         {sideBar && (
-          <div className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primary-dark/80 backdrop-blur-sm z-10">
+          <motion.div
+            initial={{ opacity:0,x: 140 }}
+            animate={{ opacity:1,x: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                duration: .4,
+              }}
+              exit={{opacity:0,x:140}}
+            className="absolute top-0 right-0 w-[140px] h-full bg-gradient-to-b from-primary/80 to-primary-dark/80 backdrop-blur-sm z-10"
+          >
             <div className="w-full h-full flex justify-center items-center">
               <div className="flex flex-col justify-center items-center gap-6 text-white">
                 <div className="w-[1px] h-[70px] bg-white"></div>
@@ -147,7 +158,7 @@ export default function Hero() {
                 <div className="w-[1px] h-[70px] bg-white"></div>
               </div>
             </div>
-          </div>
+          </motion.div>
         )}
       </section>
     </main>

@@ -32,7 +32,7 @@ export default function Navbar({sideBar,setSideBar}) {
               delay: 0.2,
             }}
           >
-            <GiHamburgerMenu className="text-3xl cursor-pointer" />
+            <GiHamburgerMenu className="text-3xl cursor-pointer"/>
           </motion.div>
         </div>
       </div>
