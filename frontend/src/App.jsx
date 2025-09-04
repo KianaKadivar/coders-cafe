@@ -2,6 +2,7 @@ import React from "react";
 import Hero from "./Components/Hero";
 import Services from "./Components/Services";
 import WhereToBuy from "./Components/WhereToBuy";
+import AppBanner from "./Components/AppBanner";
 
 export default function App() {
   return (
@@ -9,6 +10,7 @@ export default function App() {
       <Hero />
       <Services/>
       <WhereToBuy/>
+      <AppBanner/>
     </div>
   );
 }
