@@ -2,7 +2,7 @@ import React from "react";
 import BannerImg from "../../assets/coffee-cover.jpg";
 import AppStoreImg from "../../assets/website/app_store.png";
 import PlayStoreImg from "../../assets/website/play_store.png";
-import { motion } from "framer-motion";
+import { motion, scale } from "framer-motion";
 
 const BannerStyle = {
   backgroundImage: `url(${BannerImg})`,
@@ -22,21 +22,79 @@ export default function AppBanner() {
       >
         <div>
           <div className="space-y-6 max-w-xl text-center mx-auto">
-            <h1 className="text-2xl sm:text-4xl font-semibold">
+            <motion.h1
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                delay: 0.2,
+              }}
+              className="text-2xl sm:text-4xl font-semibold"
+            >
               Download the app
-            </h1>
-            <p className="sm:px-20">
+            </motion.h1>
+            <motion.p
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                delay: 0.3,
+              }}
+              className="sm:px-20"
+            >
               Seamless shopping, instant access, and your favorite products
               always just a tap away.
-            </p>
-            <div className="flex justify-center items-center gap-4">
-              <a href="#" className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]">
-                <img src={AppStoreImg} alt="" />
+            </motion.p>
+            <motion.div
+              initial={{ opacity: 0, y: 100 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{
+                type: "spring",
+                stiffness: 100,
+                damping: 10,
+                delay: 0.3,
+              }}
+              className="flex justify-center items-center gap-4"
+            >
+              <a
+                href="#"
+                className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]"
+              >
+                <motion.img
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                    delay: 0.4,
+                  }}
+                  src={AppStoreImg}
+                  alt=""
+                />
               </a>
-              <a href="#" className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]">
-                <img src={PlayStoreImg} alt="" />
+              <a
+                href="#"
+                className="max-w-[150px] sm:max-w-[120px] md:max-w-[200px]"
+              >
+                <motion.img
+                  initial={{ opacity: 0, y: 100 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 100,
+                    damping: 10,
+                    delay: 0.5,
+                  }}
+                  src={PlayStoreImg}
+                  alt=""
+                />
               </a>
-            </div>
+            </motion.div>
           </div>
         </div>
       </div>
