@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 
 export default function Navbar({sideBar,setSideBar}) {
   return (
-    <nav className="absolute top-0 left-0 w-full py-6 text-white z-40">
+    <nav className="absolute top-0 left-0 w-full py-6 text-white z-[9999]">
       <div className="container">
         <div className="flex flex-row justify-between items-center">
           <motion.h1
@@ -16,7 +16,7 @@ export default function Navbar({sideBar,setSideBar}) {
               damping: 10,
               delay: 0.2,
             }}
-            className="text-2xl font-semibold uppercase"
+            className="text-xs sm:text-sm md:text-2xl font-semibold uppercase"
           >
             <span className="text-primary">Coders</span>
             Coffee.
@@ -32,7 +32,7 @@ export default function Navbar({sideBar,setSideBar}) {
               delay: 0.2,
             }}
           >
-            <GiHamburgerMenu className="text-3xl cursor-pointer"/>
+            <GiHamburgerMenu className="text-xl  md:text-3xl cursor-pointer"/>
           </motion.div>
         </div>
       </div>

@@ -18,7 +18,7 @@ export default function AppBanner() {
     <div className="container my-14">
       <div
         style={BannerStyle}
-        className="min-h-[450px] sm:flex sm:justify-end sm:items-center rounded-xl"
+        className="min-h-[450px] flex justify-center sm:justify-end items-center rounded-xl"
       >
         <div>
           <div className="space-y-6 max-w-xl text-center mx-auto">
@@ -44,7 +44,7 @@ export default function AppBanner() {
                 damping: 10,
                 delay: 0.3,
               }}
-              className="sm:px-20"
+              className="text-xs sm:text-sm sm:px-20"
             >
               Seamless shopping, instant access, and your favorite products
               always just a tap away.
